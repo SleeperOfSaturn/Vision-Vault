@@ -1,320 +1,41 @@
 <!DOCTYPE html>
-<html>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vision Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="three.r134.min.js"></script>
+  <script src="vanta.globe.min.js"></script>
 </head>
-<style>
-  html {
-    color: #fdf4ca;
-    font-family: "Afacad Flux", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "slnt" 0;
-    background-color: #111;
-    /* Dark background for contrast */
-    background-image: url("IMG_0443.jpeg");
-    /* Black leather texture */
-    background-attachment: fixed;
-    background-size: contain;
-    /* Adjust background image size */
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  h1,
-  h2,
-  h3 {
-    text-align: center;
-    color: #fdf4ca;
-    /* Light text for readability */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
-    /* Subtle text shadow */
-    font-weight: 900;
-    margin-bottom: 10px;
-  }
-
-  p {
-    text-align: center;
-    color: #fdf4ca;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  // <uniquifier>: Use a unique and descriptive class name
-  // <weight>: Use a value from 100 to 1000
-
-  .afacad-flux-<uniquifier> {
-    font-family: "Afacad Flux", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-    font-variation-settings:
-      "slnt" 0;
-    animation: fadeIn 1s ease-in-out;
-    /* Add the fade-in animation */
-  }
-
-  .afacad-flux-dream-enabler {
-    font-family: "Afacad Flux", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 900;
-    font-style: normal;
-    font-variation-settings:
-      "slnt" 0;
-    animation: fadeIn 1s ease-in-out;
-    /* Add the fade-in animation */
-  }
-
-  .ribbon {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 50px;
-    background-color: #111;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-in-out;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 20px;
-  }
-
-  .ribbon a {
-    color: #fdf4ca;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .ribbon a:hover {
-    text-decoration: underline;
-  }
-
-  .ribbon::before,
-  .ribbon::after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-width: 25px 25px 0 0;
-    top: 0;
-    left: 0;
-  }
-
-  .ribbon::before {
-    border-color: transparent transparent #111 transparent;
-  }
-
-  .ribbon::after {
-    border-color: transparent transparent #333 transparent;
-    top: -10px;
-    left: 10px;
-  }
-
-  .kit-entry {
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 -2px 4px rgba(255, 255, 255, 0.2);
-    text-align: center;
-    animation: fadeIn 1s ease-in-out;
-    width: fit-content;
-    z-index: 1;
-  }
-
-  .kit-entry-container {
-    background-color: rgba(0, 0, 0, 0.0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4), 0 -2px 4px rgba(255, 255, 255, 0.2);
-    padding: 20px 40px;
-    border-radius: 10px;
-    z-index: -1;
-  }
-
-  section {
-    width: 80%;
-    /* Adjust the width of sections */
-    margin: 40px auto;
-    /* Center sections */
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Subtle background for sections */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* Additional Styles for the rest of the website */
-
-  .all-inclusive-kits,
-  .expert-crafted-courses,
-  .creative-arts-offerings,
-  .empowering-individuals,
-  .comprehensive-platform,
-  .start-journey,
-  .certified-courses {
-    margin-top: 60px;
-    font-size: 2.5em;
-  }
-
-  .comprehensive-kits,
-  .quality-materials,
-  .plug-and-play,
-  .no-guesswork,
-  .convenience,
-  .expertise,
-  .interactivity,
-  .creative-arts,
-  .business-strategy,
-  .self-development,
-  .discover,
-  .learn,
-  .grow {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease-in-out;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-  }
-
-  body {
-    /* ... other body styles ... */
-    background-size: contain;
-  }
-
-  .gamma-button {
-    margin-top: 40px;
-    padding: 15px 30px;
-    border-radius: 5px;
-    background-color: #fdf4ca;
-    /* Button color */
-    color: #222;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 -2px 4px rgba(255, 255, 255, 0.2);
-    transition: background-color 0.3s ease;
-    animation: fadeIn 1s ease-in-out;
-  }
-
-  .gamma-button:hover {
-    background-color: #333;
-    /* Button color on hover */
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-</style>
 
 <body>
-  <div class="ribbon"></div>
-  <br>
-  <br>
-  <h1>
-    <uniquifier><strong>Vision Vault</strong> - Turning <i>Passions</i> into <i>Reality</i></uniquifier>
-  </h1>
-  <p>Unlock your potential and bring your dreams to life with our comprehensive platform designed to empower you.</p>
-  <section>
-    <div>
-      <h2>Specialized Kits for Aspiring Artists, Entrepreneurs, and Personal Growth</h2>
-      <div class="kit-entry-container">
-        <div class="kit-entry">
-          <h3>Artist Kits</h3>
-          <p>Comprehensive kits with all the essentials to unleash your creative potential.</p>
-        </div>
-        <div class="kit-entry">
-          <h3>Entrepreneur Kits</h3>
-          <p>Equip yourself with the tools and resources to turn your business ideas into reality.</p>
-        </div>
-        <div class="kit-entry">
-          <h3>Personal Growth Kits</h3>
-          <p>Discover kits designed to help you embark on your journey of self-discovery and transformation.</p>
-        </div>
-      </div>
+  <script>
+    VANTA.GLOBE({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x3f6cff,
+      backgroundColor: 0x111128
+    })
+  </script>
+  <!-- Main content -->
+  <div class="content">
+    <h1>Vision Vault</h1>
+    <h2>Turning <i>Passions</i> into <i>Reality</i></h2>
+    <div class="unlock">
+      <p>🔓 Unlock Your Potential</p>
     </div>
-  </section>
-  <h2 class="all-inclusive-kits">All-Inclusive Kits: Tools and Materials to Get Started</h2>
-  <div class="comprehensive-kits">
-    <h3>Comprehensive Kits</h3>
-    <p>Our carefully curated kits provide everything you need to begin your journey.</p>
   </div>
-  <div class="quality-materials">
-    <h3>Quality Materials</h3>
-    <p>High-quality tools and resources designed to support your success.</p>
-  </div>
-  <div class="plug-and-play">
-    <h3>Plug-and-Play</h3>
-    <p>Start exploring your passions immediately with our ready-to-use kits.</p>
-  </div>
-  <div class="no-guesswork">
-    <h3>No Guesswork</h3>
-    <p>We've done the research to ensure you have everything to get started.</p>
-  </div>
-  <h2 class="expert-crafted-courses">Expert-Crafted Online Courses</h2>
-  <div class="convenience">
-    <h3>Convenience</h3>
-    <p>Learn at your own pace from the comfort of your home.</p>
-  </div>
-  <div class="expertise">
-    <h3>Expertise</h3>
-    <p>Benefit from the guidance of industry-leading instructors.</p>
-  </div>
-  <div class="interactivity">
-    <h3>Interactivity</h3>
-    <p>Engage with course materials and connect with fellow learners.</p>
-  </div>
-  <h2 class="creative-arts-offerings">Creative Arts, Business Strategy, and Self-Development Offerings</h2>
-  <div class="creative-arts">
-    <h3>Creative Arts</h3>
-    <p>Explore courses in painting, photography, and more.</p>
-  </div>
-  <div class="business-strategy">
-    <h3>Business Strategy</h3>
-    <p>Develop the skills to thrive as an entrepreneur.</p>
-  </div>
-  <div class="self-development">
-    <h3>Self-Development</h3>
-    <p>Embark on a journey of personal growth and fulfillment.</p>
-  </div>
-  <h2 class="certified-courses">Certified Courses</h2>
-  <h2 class="empowering-individuals">Empowering Individuals to Pursue Their Passions</h2>
-  <h2 class="our-mission">Our Mission</h2>
-  <h2 class="our-approach">Our Approach</h2>
-  <h2 class="comprehensive-platform">Comprehensive Platform for Holistic Development</h2>
-  <div class="discover">
-    <h3>Discover</h3>
-    <p>Explore our wide range of offerings and find your perfect fit.</p>
-  </div>
-  <div class="learn">
-    <h3>Learn</h3>
-    <p>Dive into expert-led courses and acquire new skills and knowledge.</p>
-  </div>
-  <div class="grow">
-    <h3>Grow</h3>
-    <p>Apply your learnings and see tangible progress in your passions.</p>
-  </div>
-  <h2 class="start-journey">Start Your Journey: Explore Our Offerings</h2>
-  <br>
 </body>
 
 </html>
