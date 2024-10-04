@@ -443,24 +443,6 @@ h2 {
   font-weight: bold;
 }
 
-/* Style for the button "Gamma" */
-.gamma-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  background-color: #333;
-  color: #fdf4ca;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
-  transition: background-color 0.3s ease;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.gamma-button:hover {
-  background-color: #111;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
