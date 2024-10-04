@@ -6,8 +6,463 @@
 
 <head>
   <title>Vision Vault</title>
-  <link rel="stylesheet" href="style.css">
 </head>
+<style>
+  html {
+    color: #fdf4ca;
+  }
+
+  // <uniquifier>: Use a unique and descriptive class name
+  // <weight>: Use a value from 100 to 1000
+
+  .afacad-flux-<uniquifier> {
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+  }
+
+  h1 {
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Add a subtle text shadow */
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+    z-index: 1;
+    /* Make h1 appear above the ribbon */
+  }
+
+  p {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.5;
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+  }
+
+  body {
+    background-color: #222;
+    color: #fdf4ca;
+    background-image: url("IMG_0443.jpeg");
+    /* Set background image here */
+    background-attachment: fixed;
+    /* This is key to fix the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    /* position: fixed; */
+    /* This makes the body fixed */
+  }
+
+  section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    /* background-color: #111; */
+    /* Remove the background color here */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+    display: flex;
+    flex-direction: column;
+    /* Align the kits vertically */
+    align-items: center;
+    /* Center the kits horizontally */
+    justify-content: center;
+    /* Center the kits vertically */
+  }
+
+  uniquifier {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(10px);
+    /* Increase blur for a stronger effect */
+    opacity: 0.8;
+    /* Adjust opacity for desired transparency */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+      /* Outer shadow */
+      0 -2px 4px rgba(255, 255, 255, 0.2);
+    /* Inner shadow for a subtle highlight */
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+  }
+
+  .afacad-flux-dream-enabler {
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+  }
+
+  h2 {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #111;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    /* Inner shadow for a subtle highlight */
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 50px;
+    background-color: #111;
+    z-index: 10;
+    /* Ensure it's on top of other elements */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Add a subtle shadow */
+    animation: fadeIn 1s ease-in-out;
+    /* Add the fade-in animation */
+  }
+
+  .ribbon::before,
+  .ribbon::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 25px 25px 0 0;
+    top: 0;
+    left: 0;
+  }
+
+  .ribbon::before {
+    border-color: transparent transparent #111 transparent;
+  }
+
+  .ribbon::after {
+    border-color: transparent transparent #333 transparent;
+    top: -10px;
+    left: 10px;
+  }
+
+  .kit-entry {
+    margin-bottom: 20px;
+    padding: 20px;
+    /* Add padding to all sides */
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    width: fit-content;
+    z-index: 1;
+  }
+
+  .kit-entry-container {
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Transparent background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    padding: 20px 40px;
+    /* 20px top/bottom, 40px left/right */
+    border-radius: 10px;
+    z-index: -1;
+    /* Make it behind the kit entries */
+  }
+
+  /* Additional Styles for the rest of the website */
+
+  /* Style for the heading "All-Inclusive Kits: Tools and Materials to Get Started" */
+  .all-inclusive-kits {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the section about Comprehensive Kits */
+  .comprehensive-kits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Quality Materials */
+  .quality-materials {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Plug-and-Play */
+  .plug-and-play {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about No Guesswork */
+  .no-guesswork {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the heading "Expert-Crafted Online Courses" */
+  .expert-crafted-courses {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the section about Convenience */
+  .convenience {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Expertise */
+  .expertise {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Interactivity */
+  .interactivity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the heading "Creative Arts, Business Strategy, and Self-Development Offerings" */
+  .creative-arts-offerings {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the section about Creative Arts */
+  .creative-arts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Business Strategy */
+  .business-strategy {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Self-Development */
+  .self-development {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the heading "Certified Courses" */
+  .certified-courses {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the section about Empowering Individuals to Pursue Their Passions */
+  .empowering-individuals {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the heading "Our Mission" */
+  .our-mission {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  /* Style for the heading "Our Approach" */
+  .our-approach {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  /* Style for the heading "Comprehensive Platform for Holistic Development" */
+  .comprehensive-platform {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* Style for the section about Discover */
+  .discover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Learn */
+  .learn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the section about Grow */
+  .grow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Semi-transparent black background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 -2px 4px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  /* Style for the heading "Start Your Journey: Explore Our Offerings" */
+  .start-journey {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
 
 <body>
   <div class="ribbon"></div>
