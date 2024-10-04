@@ -1,4 +1,16 @@
 html {
-  height: 100%;
-  width: 100%;
+  background-color: #000000;
+  color: #fdf4ca;
+}
+
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 1000
+
+.afacad-flux-<uniquifier> {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
 }
