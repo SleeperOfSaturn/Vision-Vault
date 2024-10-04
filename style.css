@@ -1,5 +1,4 @@
 html {
-  background-color: #000000;
   color: #fdf4ca;
 }
 
@@ -10,6 +9,80 @@ html {
   font-family: "Afacad Flux", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+h1 {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  /* Add a subtle text shadow */
+}
+
+p {
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+body {
+  background-color: #222;
+  color: #fdf4ca;
+  background-image: url("IMG_0443.jpeg");
+  /* Set background image here */
+  background-attachment: fixed;
+  /* This is key to fix the background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+  position: fixed;
+  /* This makes the body fixed */
+}
+
+section {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #111;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+uniquifier {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #333;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  /* Increase blur for a stronger effect */
+  opacity: 0.8;
+  /* Adjust opacity for desired transparency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+    /* Outer shadow */
+    0 -2px 4px rgba(255, 255, 255, 0.2);
+  /* Inner shadow for a subtle highlight */
+}
+
+.afacad-flux-dream-enabler {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
   font-style: normal;
   font-variation-settings:
     "slnt" 0;
